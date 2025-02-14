@@ -23,7 +23,7 @@ public class BookManager {
         if (list.isEmpty()) {
             System.out.println("No books available");
         } else {
-            for (Book books : list) {
+            for (Book books : paper_list) {
                 System.out.println(books.toString());
             }
         }
@@ -33,7 +33,7 @@ public class BookManager {
         if (list.isEmpty()) {
             System.out.println("No books available");
         } else {
-            for (Book books : list) {
+            for (Book books : audio_list) {
                 System.out.println(books.toString());
             }
         }
@@ -43,7 +43,7 @@ public class BookManager {
         if (list.isEmpty()) {
             System.out.println("No books available");
         } else {
-            for (Book books : list) {
+            for (Book books : interactive_list) {
                 System.out.println(books.toString());
             }
         }
@@ -52,16 +52,16 @@ public class BookManager {
     // add
 
     public void add(String name, String writter, String description, String type) {
-        if (type.equals(Type.AUDIO.name())) {
-            AudioBook audiobook = new AudioBook(type, writter, description);
+        if (type.equals(Type.AUDIO.toString())) {
+            AudioBook audiobook = new AudioBook(name, writter, description);
             list.add(audiobook);
             audio_list.add(audiobook);
-        } else if (type.equals(Type.INTERACTIVE.name())) {
-            InteractiveBook interactivebook = new InteractiveBook(type, writter, description);
+        } else if (type.equals(Type.INTERACTIVE.toString())) {
+            InteractiveBook interactivebook = new InteractiveBook(name, writter, description);
             list.add(interactivebook);
             interactive_list.add(interactivebook);
-        } else if (type.equals(Type.PAPER.name())) {
-            PaperBook paperbook = new PaperBook(type, writter, description);
+        } else if (type.equals(Type.PAPER.toString())) {
+            PaperBook paperbook = new PaperBook(name, writter, description);
             list.add(paperbook);
             paper_list.add(paperbook);
         } else {
@@ -69,4 +69,33 @@ public class BookManager {
         }
     }
 
+    // remove
+
+    public void remove(String name) {
+        for (int i = list.size() - 1; i >= 0; i--) {
+            if (name.equals(list.get(i).getBook())) {
+                list.remove(i);
+            }
+        }
+
+        for (int i = audio_list.size() - 1; i >= 0; i--) {
+            if (name.equals(audio_list.get(i).getBook())) {
+                audio_list.remove(i);
+            }
+        }
+
+        for (int i = paper_list.size() - 1; i >= 0; i--) {
+            if (name.equals(paper_list.get(i).getBook())) {
+                paper_list.remove(i);
+            }
+        }
+
+        for (int i = interactive_list.size() - 1; i >= 0; i--) {
+            if (name.equals(interactive_list.get(i).getBook())) {
+                interactive_list.remove(i);
+            }
+        }
+
+        System.out.println("Book removed");
+    }
 }

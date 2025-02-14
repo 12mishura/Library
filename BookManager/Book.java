@@ -4,7 +4,7 @@ abstract class Book {
     private String book;
     private String writter;
     private String description;
-    private Type type; // Добавляем поле типа
+    private Type type;
 
     Book(String book, String writter, String description, Type type) {
         this.book = book;
