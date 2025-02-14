@@ -27,6 +27,9 @@ public class Main {
                     String name = scanner.nextLine();
                     manager.remove(name);
                     break;
+                case "exit":
+                    scanner.close();
+                    return;
                 default:
                     System.out.println("Unknown command!");
                     break;
