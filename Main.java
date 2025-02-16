@@ -11,6 +11,15 @@ public class Main {
                 case "list":
                     manager.list();
                     break;
+                case "paperlist":
+                    manager.paperlist();
+                    break;
+                case "audiolist":
+                    manager.audiolist();
+                    break;
+                case "interactivelist":
+                    manager.interactivelist();
+                    break;
                 case "add":
                     System.out.println("Enter the name of the book");
                     String book = scanner.nextLine();
