@@ -98,4 +98,20 @@ public class BookManager {
 
         System.out.println("Book removed");
     }
+
+    // Search by Book or Writter
+
+    public void find(String bookorname) {
+        if (list.isEmpty()) {
+            System.out.println("No books in the library");
+        } else {
+            for (Book book : list) {
+                if (bookorname.equals(book.getBook()) || bookorname.equals(book.getWritter())) {
+                    System.out.println(book.toString());
+                } else {
+                    System.out.println("No book with this name or writter");
+                }
+            }
+        }
+    }
 }

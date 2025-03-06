@@ -36,6 +36,11 @@ public class Main {
                     String name = scanner.nextLine();
                     manager.remove(name);
                     break;
+                case "find":
+                    System.out.println("Enter the name of book or name of writter");
+                    String bookorname = scanner.nextLine();
+                    manager.find(bookorname);
+                    break;
                 case "exit":
                     scanner.close();
                     return;
